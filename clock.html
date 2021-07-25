@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body { background-color:black;}
+            p,#clock { color:white; 
+           text-align: center;
+           padding: 100px;
+           padding-bottom: 2px;
+           margin:0px;
+           border: 50px;
+           font-size: 50px; }
+            button { 
+                    color: black;
+                    font-size: 36px;
+                    margin: 26px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    text-align: center;
+                    top: 50%;
+                  
+                    }
+            .button{
+              text-align: center;
+              position: fixed;
+              right: 40%;
+              bottom: 10px;
+              
+}        
+    </style>
+    <title>clock</title>
+</head>
+<body>
+  <div class=button>
+  <button onclick="myStartFunction()">START</button>
+  <button onclick="myStopFunction()">STOP</button></div>
+    <div><p> DIGITAL CLOCK </p></div>
+    
+    <div id="clock">
+    </div> 
+    <script>
+      function myStartFunction(){
+      clock = setInterval(myTimer, 500);
+      }
+
+      function myTimer() {
+      var d = new Date();
+      var t = d.toLocaleTimeString();
+      document.getElementById("clock").innerHTML = t;
+      }
+    
+      function myStopFunction() {
+      clearInterval(clock);
+      }
+      
+      </script>
+      <div>
+      <p><span id="date"></span></p></div>
+      <script>
+       var dt = new Date();
+        document.getElementById("date").innerHTML = dt.toLocaleDateString();
+        </script>
+      
+    
+</body>
+</html>
